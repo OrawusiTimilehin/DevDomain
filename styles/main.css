@@ -6,11 +6,28 @@
     padding: 0;
 }
 
+body{
+    font-family: 'Azonix';
+}
+button{
+    font-family: 'Questrial', sans-serif;
+}
+
+@font-face {
+    font-family: 'Azonix';
+    src: url('fonts\\Azonix.otf') format('woff2'), /* Modern Browsers */
+         url('fonts\\Azonix.otf') format('woff');   /* Older Browsers */
+    /* Add more src lines for additional font formats if needed */
+  }
+
 li{
     list-style: none;
 }
 
 /* Navbar section */
+#logo{
+    
+}
 #navbar{
     border: solid 3px #687EFF;
     width:90%;
@@ -47,7 +64,21 @@ li{
 
 
 /* Main Section */
+#heading{
+    font-size: 9rem;
+    letter-spacing: 0.3rem;
+    margin-top: 5rem;
+}
 #main-container{
     border: solid 3px #FF004D   ;
     height: 88.3vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    
+}
+
+.normal-text{
+    font-family: 'Questrial', sans-serif;
 }
