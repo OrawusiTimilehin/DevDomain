@@ -4,7 +4,50 @@
     border: 0;
     margin: 0;
     padding: 0;
-
-
 }
 
+li{
+    list-style: none;
+}
+
+/* Navbar section */
+#navbar{
+    border: solid 3px #687EFF;
+    width:90%;
+    height: 10vh;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.navbar-left{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.navbar-right{
+    width: 35%;
+
+}
+.navbar-right-container{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#profile-pic{
+    width: 3rem;
+    margin-right: 1rem;
+}
+
+
+/* Main Section */
+#main-container{
+    border: solid 3px #FF004D   ;
+    height: 88.3vh;
+}
