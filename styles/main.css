@@ -29,6 +29,11 @@ button{
     /* Add more src lines for additional font formats if needed */
   }
 
+  @font-face{
+    font-family: 'Cornerstone';
+    src: url('fonts\\Cornerstone.ttf') format('woff2'), url('fonts\\Cornerstone.ttf') format('woff');
+  }
+
 li{
     list-style: none;
 }
@@ -39,10 +44,12 @@ li{
 
 
 
-
 /* Navbar section */
 #logo{
-    font-weight: 300;
+    font-weight: 500;
+    font-size:1.5rem;
+    font-family: "Azonix", monospace;
+    letter-spacing: 0.05rem;
 }
 #navbar{
     width:90%;
@@ -55,7 +62,7 @@ li{
 }
 .navbar-items:hover{
     transform: scale(1.075);
-    transition: 0.2s ease-in-out;
+    transition: 0.15s ease-in-out;
 }
 .navbar-left{
     display: flex;
@@ -82,7 +89,7 @@ li{
 .navbar-buttons:hover{
     background-color: white;
     color: #132644;
-    transition: 0.2s ease-in-out;
+    transition: 0.15s ease-in-out;
 }
 #profile-pic{
     width: 3rem;
@@ -112,7 +119,9 @@ li{
 }
 
 #heading{
-    font-size: 7.0rem;
+    font-size: 7.2rem;
+    font-family: "Space Mono", monospace;
+    font-weight: 900;
     letter-spacing: 0.3rem;
     margin-top: 7rem;
     z-index: 3;
