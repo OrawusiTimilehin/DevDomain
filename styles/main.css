@@ -11,7 +11,7 @@ body{
     color: #ffffff;
     background-image: url("..\\images\\Background-Image.png");
     background-size: cover;
-    background-position: center 100vh;
+    background-position: center 120vh;
 }
 button{
     border: solid 0.1rem #000c4195;
@@ -33,21 +33,30 @@ li{
     list-style: none;
 }
 
+
+
+
+
+
+
+
 /* Navbar section */
 #logo{
-    
+    font-weight: 300;
 }
 #navbar{
-    border: solid 3px #687EFF;
     width:90%;
-    height: 10vh;
+    height: 15vh;
     margin: 0 auto;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
 }
-
+.navbar-items:hover{
+    transform: scale(1.075);
+    transition: 0.2s ease-in-out;
+}
 .navbar-left{
     display: flex;
     flex-direction: row;
@@ -65,23 +74,52 @@ li{
     justify-content: space-between;
     align-items: center;
 }
+.navbar-buttons{
+    border-color: white;
+    border-width: 0.085rem;
+}
 
+.navbar-buttons:hover{
+    background-color: white;
+    color: #132644;
+    transition: 0.2s ease-in-out;
+}
 #profile-pic{
     width: 3rem;
     margin-right: 1rem;
 }
 
 
+
+
+
+
+
+
 /* Main Section */
+
+#astronaut-img{
+    width: 20rem;
+    position: absolute;
+    z-index: -1;
+    top: 5rem;
+}
+
+
+#description-text{
+    font-weight: 400;
+    font-size: 1.0rem;
+}
+
 #heading{
-    font-size: 7.8rem;
+    font-size: 7.0rem;
     letter-spacing: 0.3rem;
-    margin-top: 5rem;
+    margin-top: 7rem;
+    z-index: 3;
 }
 
 #main-container{
-    border: solid 3px #FF004D   ;
-    height: 88.3vh;
+    height: 85vh;
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
@@ -96,6 +134,18 @@ li{
     color: #ffffff;
 }
 
-#main-container p{
-    font-size: 1.3rem;
+.planets{
+    width: 4rem;
+    position: absolute;
+    z-index: -1;
+}
+
+#planet1-img{
+    top: 15vh;
+    left: -0.2rem;
+}
+
+#planet2-img{
+    top: 55vh;
+    right: -0.2rem;
 }
