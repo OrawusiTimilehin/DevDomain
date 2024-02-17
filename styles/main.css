@@ -8,9 +8,18 @@
 
 body{
     font-family: 'Azonix';
+    color: #ffffff;
+    background-image: url("..\\images\\Background-Image.png");
+    background-size: cover;
+    background-position: center 100vh;
 }
 button{
+    border: solid 0.1rem #000c4195;
+    border-radius: 1.5rem;
+    background-color: transparent;
     font-family: 'Questrial', sans-serif;
+    width: 5rem;
+    height: 2.5rem;
 }
 
 @font-face {
@@ -65,10 +74,11 @@ li{
 
 /* Main Section */
 #heading{
-    font-size: 9rem;
+    font-size: 7.8rem;
     letter-spacing: 0.3rem;
     margin-top: 5rem;
 }
+
 #main-container{
     border: solid 3px #FF004D   ;
     height: 88.3vh;
@@ -76,9 +86,16 @@ li{
     flex-direction: column;
     justify-content: flex-start;
     align-items: center;
+    background-size: cover;
+    background-position: center;
     
 }
 
 .normal-text{
     font-family: 'Questrial', sans-serif;
+    color: #ffffff;
+}
+
+#main-container p{
+    font-size: 1.3rem;
 }
