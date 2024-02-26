@@ -10,15 +10,14 @@ form{
 #auth-section{
     width: 100%;
     height: 85vh;
-
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
 #auth-card{
-    height: 23rem;
-    width: 18rem;
+    height: 25rem;
+    width: 20rem;
     border: solid 0.1rem #ffffff;
     border-radius: 1.5rem;
     margin: 0rem auto;
@@ -50,19 +49,19 @@ form{
 }
 
 
-#submit-button{
+.submit-button{
     width: 4.9rem;
     height: 2.4rem;
+    margin-top: 0.9rem;
     border: solid 0.085rem #ffffff;
     border-radius: 1.5rem;
     background-color: transparent;
     color: white;
-    margin-top: 2rem;
     transition: 0.15s ease-in-out;
 
 }
 
-#submit-button:hover{
+.submit-button:hover{
     background-color: white;
     color: #132644;
     transform: scale(1.05);
