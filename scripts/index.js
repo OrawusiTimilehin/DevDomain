@@ -3,7 +3,7 @@ $(document).ready(function(){
     const letters =  ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z'];
     const header = 'DEVDOMAIN'
 
-
+    setTimeout(function(){
     let count = 0;
     let letterInterval = 0;
     const interval = setInterval(function(){
@@ -22,5 +22,7 @@ $(document).ready(function(){
         count ++
     }
     }, 50)
+
+}, 400)
 
 })

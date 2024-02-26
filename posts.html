@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="eng">
+<html>
     <head>
         <title> DevDomain </title>
         <meta description="Tech Blog that delivers technological insights 
@@ -9,9 +9,13 @@
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Questrial&display=swap" rel="stylesheet">
         <link rel="stylesheet" href="styles\main.css">
+        <link rel="stylesheet" href="styles\posts.css">
         
     </head>
     <body>
+
+
+        <!-- NAVBAR TO BY INCLUDED CONSISTENTLY ON ALL PAGES WITHOUT REPEATING THE CODE - ACHIEVED USING TEMPLATING OR BACKEND WITH EXPRESS -->
         <nav id="navbar">
             <div class="navbar-left ">
                 <a class="navbar-items" href="https://orawusitimilehin.onrender.com/" target="_blank"><img id="profile-pic" src="images\Profile Pic.png"></a>
@@ -21,7 +25,7 @@
             <div class="navbar-right">
                 <ul class="navbar-right-container">
                     <li>
-                        <a  href="posts.html"> <button class="normal-text navbar-buttons navbar-items">Posts</button> </a>
+                        <button class="normal-text navbar-buttons navbar-items">Posts</button>
                     </li>
                     <li>
                         <button class="normal-text navbar-buttons navbar-items">Log in</button>
@@ -33,15 +37,50 @@
             </div>
             
         </nav>
-        <div id="main-container">
-            <img id="astronaut-img" src="images\astronaut-2.png">
-            <img id="planet1-img" class="planets" src="images\Planet1.png">
-            <img id="planet2-img"  class="planets" src="images\Planet2.png">
-            <h1 id="heading">DEVDOMAIN</h1>
-            <h2 id="description-text" class="normal-text">Simplified tech tutorials and insights for all skill levels at DevDomain.</h2>
-        </div>
 
-        <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
-        <script src="scripts\index.js"></script>
-    </body>
-</html> 
+
+        <img id="astronaut-img" src="images\Astronaut.png">
+        <img id="planet-img" src="images\Planet2.png">
+        <img id="planet2-img" src="images\Planet1.png">
+        <h1 id="heading"> POSTS </h1>
+        <div id="posts-container">
+            <div class="post-box">
+
+            </div>
+            <div class="post-box">
+
+            </div>
+            <div class="post-box">
+
+            </div>
+            <div class="post-box">
+
+            </div>
+            <div class="post-box">
+
+            </div>
+            <div class="post-box">
+
+            </div>
+            <div class="post-box">
+
+            </div>
+            <div class="post-box">
+
+            </div>
+            <div class="post-box">
+
+            </div>
+            
+            
+            
+        </div>
+        <section id="button-placement-container">
+            <div id="buttons-container">
+                <button id="previous-button" class="post-buttons"> Previous </button>
+                <button id="next-button" class="post-buttons"> Next </button>
+            </div>
+        </section>
+        
+        
+</html>

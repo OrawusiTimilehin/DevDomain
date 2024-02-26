@@ -1,0 +1,122 @@
+body{
+    background-image: url("..\\images\\Background-Image.png");
+    background-size: cover;
+    background-position: center ;
+    margin-bottom: 17rem;
+}
+
+
+
+/* Heading */
+
+#heading{
+    font-size: 3.2rem;
+    font-family: "Azonix", monospace;
+    font-weight: 500;   
+    text-align: center;
+    letter-spacing: 0.3rem;
+    margin-top: 2rem;
+    z-index: 3;
+    margin-top: 3rem;
+    
+}
+
+#astronaut-img{
+    width: 10rem;
+    position: absolute;
+    top: 7.5rem;
+    left: 2.5rem;
+}
+
+
+#planet-img{
+    
+    position: absolute;
+    top: 37rem;
+    right: 0;
+    width: 3.5rem;
+}
+
+#planet2-img{
+    position: absolute;
+    top: 65rem;
+    left: 0;
+    width: 4rem;
+
+}
+ 
+/* Posts Section */
+
+#posts-container{
+   
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    /* grid-column-gap: 5rem; */
+    grid-row-gap: 5rem;
+    place-items: center;
+    margin: 3rem 4rem 0rem;
+    width: 90%;
+    z-index: 3;
+    
+}
+
+.post-box{
+    border: solid 3px #63758B60;
+    border-radius: 3rem;
+    height: 23rem;
+    width:15rem;
+    transition: 0.15s ease-in-out;
+    
+
+    /* width:2.5rem; */
+}
+
+.post-box:hover{
+    transform: scale(1.05);
+    box-shadow: 0 0 0.6rem 0.05rem #ffffff80;
+
+}
+
+#buttons-container{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 40%;
+    margin: 3rem auto;
+    /* padding: 4rem 0rem; */
+  
+}
+
+#button-placement-container{
+    position: relative;
+    top: 7rem; 
+}
+
+.post-buttons{
+    width: 6rem;
+    height: 2.8rem;
+    background-color: #ffffff;
+     border: solid 0.1rem #000c41;
+
+    /* test */
+    /* border: solid 0.1rem #ffffff;
+    background-color: transparent;
+    color: white; */
+
+
+    transition: 0.15s ease-in-out;
+    
+}
+
+.post-buttons:hover{
+    border: solid 0.1rem #ffffff;
+    background-color: transparent;
+    color: white;
+
+    /* test */
+    /* border: solid 0.1rem #000c41;
+    background-color: #ffffff;
+    color: #000c41; */
+    transform: scale(1.08);
+}

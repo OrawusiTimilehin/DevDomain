@@ -5,22 +5,30 @@
     margin: 0;
     padding: 0;
 }
+a{
+    cursor: pointer;
+    color: inherit;
+    text-decoration: none;
+}
 
 body{
     font-family: 'Azonix';
     color: #ffffff;
     background-image: url("..\\images\\Background-Image.png");
     background-size: cover;
-    background-position: center 120vh;
+    background-position: center;
+    
 }
 button{
     border: solid 0.1rem #000c4195;
     border-radius: 1.5rem;
     background-color: transparent;
     font-family: 'Questrial', sans-serif;
-    width: 5rem;
-    height: 2.5rem;
+    width: 4.6rem;
+    height: 2.4rem;
+    cursor: pointer;
 }
+
 
 @font-face {
     font-family: 'Azonix';
@@ -42,12 +50,10 @@ li{
 
 
 
-
-
 /* Navbar section */
 #logo{
     font-weight: 500;
-    font-size:1.5rem;
+    font-size:1.15rem;
     font-family: "Azonix", monospace;
     letter-spacing: 0.05rem;
 }
@@ -92,7 +98,7 @@ li{
     transition: 0.15s ease-in-out;
 }
 #profile-pic{
-    width: 3rem;
+    width: 2.485rem;
     margin-right: 1rem;
 }
 
@@ -106,10 +112,12 @@ li{
 /* Main Section */
 
 #astronaut-img{
-    width: 20rem;
+    width: 23rem;
     position: absolute;
     z-index: -1;
-    top: 5rem;
+    top: -2rem;
+    right: 35%;
+    transform: rotate(-10deg)
 }
 
 
@@ -123,7 +131,7 @@ li{
     font-family: "Space Mono", monospace;
     font-weight: 900;
     letter-spacing: 0.3rem;
-    margin-top: 7rem;
+    margin-top: 6.5rem;
     z-index: 3;
 }
 
@@ -135,6 +143,7 @@ li{
     align-items: center;
     background-size: cover;
     background-position: center;
+    position: relative;
     
 }
 
@@ -150,11 +159,11 @@ li{
 }
 
 #planet1-img{
-    top: 15vh;
-    left: -0.2rem;
+    top: 15%;
+    left: 0rem;
 }
 
 #planet2-img{
-    top: 55vh;
-    right: -0.2rem;
+    top: 55%;
+    right: 0rem;
 }
