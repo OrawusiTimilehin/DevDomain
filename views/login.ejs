@@ -15,27 +15,7 @@
 
 
     <!-- NAVBAR TO BY INCLUDED CONSISTENTLY ON ALL PAGES WITHOUT REPEATING THE CODE - ACHIEVED USING TEMPLATING OR BACKEND WITH EXPRESS -->
-    <nav id="navbar">
-        <div class="navbar-left ">
-            <a class="navbar-items" href="https://orawusitimilehin.onrender.com/" target="_blank"><img id="profile-pic" src="images\Profile Pic.png"></a>
-            <a class="navbar-items" href="index.html"><span id="logo">DEVDOMAIN</span></a>
-        </div>
-        
-        <div class="navbar-right">
-            <ul class="navbar-right-container">
-                <li>
-                    <a  href="posts.html"> <button class="normal-text navbar-buttons navbar-items">Posts</button> </a>
-                </li>
-                <li>
-                    <a href="login.html"> <button class="normal-text navbar-buttons navbar-items">Log in</button> </a>
-                </li>
-                <li>
-                    <a href="signup.html"> <button class="normal-text navbar-buttons navbar-items">Sign Up</button> </a>
-                </li>
-            </ul>
-        </div>
-        
-    </nav>
+    <%- include('navbar.ejs') -%>
 
 
 
