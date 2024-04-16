@@ -5,6 +5,10 @@
     margin: 0;
     padding: 0;
 }
+html {
+    font-size: 16px;
+}
+
 a{
     cursor: pointer;
     color: inherit;
@@ -168,3 +172,203 @@ li{
     top: 55%;
     right: 0rem;
 }
+
+
+
+
+/* Responsiveness */
+
+/* Phone Viewport */
+
+@media screen and (max-width: 411px){
+    #astronaut-img{
+        width: calc(23rem - 30%);
+        top: 6rem;
+        right: 18%;
+        
+    }
+    #description-text{
+        font-size: 0.5rem;
+    }
+    #heading{
+        font-size: 3rem;
+        margin-top: calc(6.5rem + 25%);
+        
+    }
+    .navbar-buttons{
+        width: 3.5rem;
+        height: 2rem;
+    }
+    .planets{
+        width: 2.5rem;
+    }
+    body{
+        background-color: red;
+    }
+}
+
+@media screen and (min-width:412px) and (max-width: 450px){
+    #astronaut-img{
+        width: calc(23rem - 30%);
+        top: 6.3rem;
+        right: 22%;
+        
+    }
+    #description-text{
+        font-size: 0.5rem;
+    }
+    #heading{
+        font-size: 3rem;
+        margin-top: calc(6.5rem + 25%);
+        
+    }
+    .navbar-buttons{
+        width: 3.5rem;
+        height: 2rem;
+    }
+    .planets{
+        width: 2.5rem;
+    }
+    body{
+        background-color: red;
+    }
+}
+
+/* Small Viewport */
+@media screen and (min-width: 451px) and (max-width: 576px){
+    #astronaut-img{
+        width: calc(23rem - 30%);
+        top: 4rem;
+        right: 30%;
+        
+    }
+    #description-text{
+        font-size: 0.5rem;
+    }
+    #heading{
+        font-size: 3rem;
+        margin-top: calc(6.5rem + 8%);
+        
+    }
+    .navbar-buttons{
+        width: 3.5rem;
+        height: 2rem;
+    }
+    .planets{
+        width: 2.5rem;
+    }
+}
+
+/* Others */
+@media screen and (min-width: 577px) and (max-width: 768px){
+
+    #heading{
+        font-size: 4.5rem;
+        margin-top: calc(6.5rem + 8%);
+        
+    }
+    #astronaut-img{
+        width: calc(23rem - 20%);
+        top: 5.2rem;
+    }
+    .navbar-buttons{
+        width: 3.5rem;
+        height: 2rem;
+    }
+    .planets{
+        width: 3rem;
+    }
+    
+}
+
+@media screen and (min-width: 769px) and (max-width: 1024px) {
+    html {
+        font-size: 14px;
+    }
+    #heading{
+        margin-top: calc(6.5rem + 5%);
+    }
+  
+    #astronaut-img{
+        /* width: calc(23rem - 5%); */
+        top: calc(-2rem + 6%);
+        right: 32%;
+    }
+   
+}
+
+@media screen and (min-width: 1025px) and (max-width: 1200px) {
+ 
+    html{
+        font-size: 16px;
+    }
+
+}
+
+@media screen and (min-width: 1201px) and (max-width: 1440px) {
+ 
+    html{
+        font-size: 17px;
+    }
+
+}
+
+@media screen and (min-width: 1441px) {
+    
+    #astronaut-img{
+        right: 40%;
+    }
+
+    html{
+        font-size: 18px;
+    }
+
+
+}
+
+@media screen and (min-width: 1442px) and (max-width: 1600px) {
+    
+    #astronaut-img{
+        right: 37%;
+    }
+
+    html{
+        font-size: 18px;
+    }
+
+
+}
+
+@media screen and (min-width: 1601px) and (max-width: 2040px){
+    
+    #astronaut-img{
+        right: 39%;
+    }
+
+    html{
+        font-size: 18px;
+    }
+
+}
+
+@media screen and (min-width: 2041px){
+    
+    #astronaut-img{
+        right: 41%;
+    }
+
+    html{
+        font-size: 18px;
+    }
+
+}
+
+/* My standard breakpoints are:
+
+360px - 575px
+576px - 767px
+768px - 991px
+992px - 1199px
+1200px - 1440px
+
+Some times I go up to 2560px depending on the design layout and project. */
