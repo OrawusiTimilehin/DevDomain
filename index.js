@@ -22,6 +22,13 @@ app.get("/signup", (req, res) => {
     res.render("signup.ejs");
 })
 
+app.get("/post/", (req, res )=>{
+    res.render("article.ejs");
+})
+
+app.get("/create",  (req, res)=>{
+    res.render("create.ejs");
+})
 
 
 app.listen(port, () => {

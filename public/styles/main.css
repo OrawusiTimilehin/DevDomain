@@ -21,6 +21,7 @@ body{
     background-image: url("..\\images\\Background-Image.png");
     background-size: cover;
     background-position: center;
+    background-color: #010812;
     
 }
 button{
@@ -173,8 +174,68 @@ li{
     right: 0rem;
 }
 
+/* Hamburger Menu */
 
+.hamburger{
+    cursor: pointer;
+    display: none;
+    border: 1px solid white;
+    border-radius: 0.18rem;
+}
 
+.bar{
+    width: 30px;
+    height: 2px;
+    margin: 6px auto;
+    transition: all 0.3s ease-in-out;
+    background: white;
+    opacity: 0.8;
+}
+
+.slider-items{
+    border: none;
+    color: white;
+}
+.slider-items:hover{
+   transform: scale(1.1);
+}
+.navigation-slider{
+    position: fixed;
+    display: none;
+    width: 100%;
+    transform: translateX(-100%);
+    transition: transform 1s ease-in-out;
+}
+.navigation-slider-active{
+    
+    transform: translateX(0);
+}
+.nav-list{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    column-gap: 5rem;
+    z-index: 10;
+}
+/* HAMBURGER RESPONSIVENESS */
+@media screen and (max-width: 768px) {
+    .hamburger{
+        display: block;
+
+    }
+    .navbar-right{
+        width: 2.5rem;
+    }
+    
+    .navbar-right-container{
+        display: none;
+    }
+    .navigation-slider{
+        display: block;
+    }
+    
+}
 
 /* Responsiveness */
 
@@ -372,3 +433,4 @@ li{
 1200px - 1440px
 
 Some times I go up to 2560px depending on the design layout and project. */
+

@@ -1,5 +1,8 @@
 $(document).ready(function(){
-    console.log("JAVASCRIPT LINKED")
+
+    
+    console.log("JAVASCRIPT LINKED");
+ 
     const letters =  ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z'];
     const header = 'DEVDOMAIN'
 
@@ -24,5 +27,14 @@ $(document).ready(function(){
     }, 50)
 
 }, 400)
+
+const hamburgerEl = document.querySelector(".hamburger");
+const navEl = document.querySelector(".navigation-slider");
+
+hamburgerEl.addEventListener("click", () => {
+    console.log("hamburger-clicked")
+navEl.classList.toggle('navigation-slider-active')
+})
+
 
 })
