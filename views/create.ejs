@@ -14,15 +14,57 @@
         </head>
         <body>
             <%- include("navbar.ejs") -%>
-
             <!-- Form  -->
-            <form>
-                <label> Title </label>
-                <input type="text">
-                <label> Published: </label>
-                <input type="date">
-                <label> Author: </label>
-                <input type="text">
+            <form action="/add-post" method="post">
+                <!-- Title of Article  -->
+                <label for="title"> Title </label>
+                <input type="text" id="title" name="title" required>
+                <!-- Author of Article -->
+                <label for="author"> Author: </label>
+                <input type="text" id="author" name="author" required>
+                <!-- Date of publishing  -->
+                <label for="dop"> Published: </label>
+                <input type="date" id="dop" name="publish_date">
+                <!-- Content -->
+                <label for="content">Content:</label><br>
+                <textarea id="content" name="content" rows="10" cols="50" required></textarea><br>
+                <!-- Category -->
+                <label for="category">Category:</label>
+                <select id="category" name="category" required>
+                    <option value="technology"> Technology </option>
+                    <option value="software-development">Software Development</option>
+                    <option value="hardware">Hardware</option>
+                    <option value="ai-ml">Artificial Intelligence & Machine Learning</option>
+                    <option value="cybersecurity">Cybersecurity</option>
+                    <option value="cloud-computing">Cloud Computing</option>
+                    <option value="data-science">Data Science</option>
+                    <option value="iot">Internet of Things (IoT)</option>
+                    <option value="blockchain">Blockchain</option>
+                    <option value="vr-ar">Virtual Reality & Augmented Reality</option>
+                    <option value="mobile-apps">Mobile Applications</option>
+                    <option value="web-development">Web Development</option>
+                    <option value="devops">DevOps</option>
+                    <option value="robotics">Robotics</option>
+                    <option value="tech-news">Tech News</option>
+                    <option value="startups">Startups</option>
+                </select><br>
+                <!-- Tags -->
+                <label for="tags">Tags:</label>
+                <input type="text" id="tags" name="tags" placeholder="e.g. technology, AI, future" maxlength="200"><br><br>
+                <!-- Meta Description -->
+                <label for="meta_description">Meta Description:</label><br>
+                <textarea id="meta_description" name="meta_description" rows="3" cols="50"></textarea><br><br>
+                <!-- Reading Time -->
+                <label for="reading_time">Reading Time (minutes):</label>
+                <input type="number" id="reading_time" name="reading_time" min="1"><br><br>
+                <!-- Submit Button -->
+                <button style="color: white " type="submit">Submit</button>
+
+
+
+
+
+                
             </form>
 
         </body>
