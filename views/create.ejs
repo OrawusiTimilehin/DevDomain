@@ -11,6 +11,8 @@
         <link href="https://fonts.googleapis.com/css2?family=Questrial&display=swap" rel="stylesheet">
         <link rel="stylesheet" href="styles\main.css">
             <!-- <link rel="stylesheet" href="styles\aricle.css"> -->
+             <!-- CKEditor CDN -->
+        <script src="https://cdn.ckeditor.com/4.16.2/standard/ckeditor.js"></script>
         </head>
         <body>
             <%- include("navbar.ejs") -%>
@@ -27,7 +29,11 @@
                 <input type="date" id="dop" name="publish_date">
                 <!-- Content -->
                 <label for="content">Content:</label><br>
-                <textarea id="content" name="content" rows="10" cols="50" required></textarea><br>
+                <textarea id="content" name="content" rows="10" cols="50" required>
+                </textarea><br>
+                <script>
+                    CKEDITOR.replace('content');
+                </script>
                 <!-- Category -->
                 <label for="category">Category:</label>
                 <select id="category" name="category" required>
