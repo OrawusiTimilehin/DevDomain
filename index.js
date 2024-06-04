@@ -2,14 +2,21 @@ import express from "express";
 import bodyParser from "body-parser";
 import pg from 'pg';
 import env from 'dotenv';
+import bcrypt from 'bcrypt';
 
+//Constant variables
 const app = express();
 const port = 3000;
+const saltRounds = 10;
+
+//Configuring environment variable
 env.config();
 
+// Middlewares
 app.use(express.static("public"));
 app.use(bodyParser.urlencoded(  { extended:true }  ))
 
+// Initialization of the db object
 const db = new pg.Client({
     user : process.env.PG_USER,
     host : process.env.PG_HOST,
@@ -18,6 +25,8 @@ const db = new pg.Client({
     port : process.env.PG_PORT
 });
 db.connect();
+
+// Route Handlers
 
 app.get("/", (req, res) => {
     res.render("index.ejs");
@@ -35,8 +44,71 @@ app.get("/login", (req, res) => {
     res.render("login.ejs");
 })
 
+app.post("/login", async (req, res)=>{
+    const email = req.body.email;
+    const password = req.body.password;
+
+    try {
+        const result = await db.query("SELECT * FROM users WHERE email = $1", [email]);
+        if (result.rows.length > 0){
+            const user = result.rows[0]
+            const storedHashedPassword = user.password;
+
+            bcrypt.compare(password,storedHashedPassword, (err, result)=>{
+                if (err){
+                    console.log(err);
+                }else{
+                    //result is a boolean which is either true or false depending on whether the passwords match or not.
+                    if (result){
+                        res.send("Loged In")
+                    }else{
+                        res.send("Wrong password")
+                    }
+                }
+            })
+        }
+;    }catch(err){
+        console.log(err)
+        res.render("login.ejs", {
+            error: "User not found"
+        })
+    }
+})
+
 app.get("/signup", (req, res) => {
-    res.render("signup.ejs");
+    res.render("signup.ejs", );
+})
+
+app.post("/signup", async (req, res)=>{
+    const email = req.body.email;
+    const username = req.body.username;
+    const password = req.body.password;
+    const confirm_password = req.body.confirm_password;
+
+    if (password == confirm_password ){
+        const result = await db.query("SELECT * FROM users WHERE email = $1", [email])
+
+        if (result.rows.length == 0){
+            const hashed_password = bcrypt.hash(password, saltRounds, async (err, hash)=>{
+                if (err){
+                    console.log(err)
+                }else{
+                    const user = await db.query("INSERT INTO users (username, email, password) VALUES ($1, $2, $3)", [username, email, hash]);
+                }
+                
+            });
+           
+        }else{
+            res.render("signup.ejs", {
+                existing_user : true
+            })
+        }
+    }else{
+        console.log("entered else block")
+        res.render("signup.ejs", {
+            error: "Passwords do not match"
+        });
+    }
 })
 
 app.get("/post/:id", async (req, res )=>{

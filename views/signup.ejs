@@ -21,7 +21,14 @@
 
     <section id="auth-section">
         <div id="auth-card">
-            <form>
+            
+            <form action="/signup" method="POST">
+                <% if(locals.error){%>
+                    <p style="color: red"><%- error %></p>
+                    <%}%>
+                <% if(locals.existing_user){%>
+                    <p style="color: red"> User already exists </p>
+                    <%}%>
                 <label class="auth-form auth-form-labels" for="email-signup"> Email: </label>
                 <input  class="auth-form auth-form-inputs" type="email" name="email" id="email-signup" placeholder=" Enter your email here">
                 <label class="auth-form auth-form-labels" for="password-signup"> Password: </label>
@@ -29,7 +36,7 @@
                 <label class="auth-form auth-form-labels" for="username-signup"> Username: </label>
                 <input  class="auth-form auth-form-inputs" type="text" name="username" id="username-signup" placeholder=" Enter your Username here">
                 <label class="auth-form auth-form-labels" for="password-confirm-signup"> Confirm Password: </label>
-                <input class="auth-form auth-form-inputs" type="password" name="confirm-password" id="password-confirm-signup">
+                <input class="auth-form auth-form-inputs" type="password" name="confirm_password" id="password-confirm-signup">
                 <input type="submit" class="submit-button" name="submit-button" id="submit-button" value="Sign Up">
             </form>
 
