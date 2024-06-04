@@ -22,38 +22,22 @@
         <img id="planet-img" src="images\Planet2.png">
         <img id="planet2-img" src="images\Planet1.png">
         <h1 id="post-heading"> POSTS </h1>
-        <div id="posts-container">
-            <div class="post-box">
-
+        
+            <div id="posts-container">
+                <% posts.forEach((post)=> { %>
+                    <a href="/post/<%-post.id %>">
+                    <div class="post-box">
+                        <p> <%- post.title %> </p>
+                        <p> <%- post.author %> </p>
+                        <% let date = new Date(post.date) %>
+                        <% let formatted_date = date.toISOString().split('T')[0] %>
+                        <p> <%- formatted_date %> </p>
+                    </div>
+                </a>
+                <% }) %> 
             </div>
-            <div class="post-box">
-
-            </div>
-            <div class="post-box">
-
-            </div>
-            <div class="post-box">
-
-            </div>
-            <div class="post-box">
-
-            </div>
-            <div class="post-box">
-
-            </div>
-            <div class="post-box">
-
-            </div>
-            <div class="post-box">
-
-            </div>
-            <div class="post-box">
-
-            </div>
-            
-            
-            
-        </div>
+       
+       
         <section id="button-placement-container">
             <div id="buttons-container">
                 <button id="previous-button" class="post-buttons"> Previous </button>

@@ -67,7 +67,10 @@ body{
     height: 23rem;
     width:15rem;
     transition: 0.15s ease-in-out;
-    
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 
     /* width:2.5rem; */
 }
