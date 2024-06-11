@@ -24,12 +24,18 @@
                     <li>
                         <a  href="/posts"> <button class="normal-text navbar-buttons navbar-items">Posts</button> </a>
                     </li>
+                    <% if (authenticated == false){%> 
                     <li>
                         <a href="/login"> <button class="normal-text navbar-buttons navbar-items">Log in</button> </a>
                     </li>
                     <li>
                         <a href="/signup"> <button class="normal-text navbar-buttons navbar-items">Sign Up</button> </a>
                     </li>
+                    <% }else{ %>
+                        <li>
+                            <a href="/logout"> <button class="normal-text navbar-buttons navbar-items">Log Out</button> </a>
+                        </li>
+                     <%} %> 
                 </ul>
                 <div class="hamburger">
                     <div class="bar"></div>

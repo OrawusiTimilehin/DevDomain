@@ -22,9 +22,10 @@
     <section id="auth-section">
         <div id="auth-card">
             <form action="/login", method="POST">
-                <% if (locals.error){%>
-                    <p><%- error %></p>
-                    <%}%>
+                <!-- messages .error is an array -->
+                <% if (messages.error && messages.error.length > 0) { %>
+                    <p style="color: red;"><%= messages.error[0] %></p>
+                  <% } %>
                 <label class="auth-form auth-form-labels" for="email-login"> Email: </label>
                 <input  class="auth-form auth-form-inputs" type="email" name="email" id="email-login" placeholder=" Enter your email here">
                 <label class="auth-form auth-form-labels" for="password-login"> Password: </label>
