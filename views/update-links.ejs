@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title> DevDomain </title>
+        <meta description="Tech Blog that delivers technological insights 
+        and provides people with the skills needed for their coding journey ">
+        <link rel="icon" href="images\Profile Pic.png">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Questrial&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="styles\main.css">
+        <link rel="stylesheet" href="styles\profile.css">
+        
+    </head>
+    <body>
+        <div>
+            <h1>Social Links </h1>
+            <% if ( locale.error) { %>
+                <p> <%= error  %></p>
+               <% } %>
+            <form action="/edit-links", method="POST">
+                <label>
+                    LinkedIn
+                </label>
+                <input type="text" value="<%= linkedin %>">
+                <label>
+                    Github
+                </label>
+                <input type="text" value="<%= github %>">
+                <label>
+                    Twitter
+                </label>
+                <input type="text" value="<%= twitter%>">
+                <input type="submit" value="Submit">
+            </form>
+        </div>
+    </body>

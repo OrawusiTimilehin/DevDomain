@@ -17,6 +17,25 @@
 
             <h1><%- post.title%></h1>
             <p><%- post.content %></p>
+            
+            <h2> Comments:</h2>
+            <div id="comment-box">
+                <% comments.forEach(comment => { %>
+                    <div class="comment">
+                        <p><%= comment.content %></p>
+                    </div>
+                <% }); %>
+            </div>
+
+            <div>
+
+                <form action="/comment" method="POST">
+                    <label for="user-comment">Leave a Comment:</label>
+                    <input type="text" name="comment" id="user-comment">
+                    <input hidden="true" name="post_id" value="<%= post.id%>"> 
+                    <input type="submit">
+                </form>
+            </div>
         </body>
     </head>
 </html>

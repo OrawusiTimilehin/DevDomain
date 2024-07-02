@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title> DevDomain </title>
+        <meta description="Tech Blog that delivers technological insights 
+        and provides people with the skills needed for their coding journey ">
+        <link rel="icon" href="images\Profile Pic.png">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Questrial&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="styles\main.css">
+        <link rel="stylesheet" href="styles\profile.css">
+        
+    </head>
+<body>
+     <!-- NAVBAR TO BY INCLUDED CONSISTENTLY ON ALL PAGES WITHOUT REPEATING THE CODE - ACHIEVED USING TEMPLATING OR BACKEND WITH EXPRESS -->
+    <%- include('navbar.ejs')%>
+    <h1>User Profile</h1>
+    <% if (locals.error) { %>
+     <p> <%= error %></p>
+    <% }else{ %>
+    <div>
+        <h2>Bio:</h2>
+        <ul>
+            <li>Username: </li>
+            <li><%= username %></li>
+            <a href="/update-username"><button>Change Username</button></a>
+        </ul>
+    </div>
+    <div>
+        <h2>Tech Profile:</h2>
+        <ul>
+            <li>Occupation: </li>
+            <li><%= occupation %></li>
+            <li>Company: </li>
+            <li><%= company %></li>
+            <li>Skills: </li>
+            <li><%= skills %></li>
+            <a href="/update-tech-profile"><button>Update</button></a>
+        </ul>
+    </div>
+    <div>
+        <h2>Tech Profile:</h2>
+        <ul>
+            <li>LinkedIn: </li>
+            <li><%= linkedin %></li>
+            <li>Github: </li>
+            <li><%= github %></li>
+            <li>Twitter: </li>
+            <li><%= twitter %></li>
+            <a href="/update-links"><button style="color: white">Update</button></a>
+        </ul>
+    </div>
+    <% } %>
+</body>
