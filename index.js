@@ -6,6 +6,7 @@ import bcrypt from 'bcrypt';
 import session from "express-session";
 import passport from "passport";
 import {Strategy} from "passport-local";
+import GoogleStrategy from "passport-google-oauth2"
 import flash from 'connect-flash';
 
 //Constant variables
@@ -238,6 +239,21 @@ app.get("/update-username", (req, res)=>{
 app.get("/update-links", (req, res)=>{
     res.render("update-links.ejs");
 });
+
+app.get("/auth/google/", passport.authenticate("google", {
+    successRedirect: "/",
+    failureRedirect: "/login",
+    failureFlash: true,
+  }));
+
+app.get("auth/google/login12 34569 b", passport.authenticate("google-login", {
+    successRedirect: "/",
+    failureRedirect: "/login",
+    failureFlash: true,
+  }));
+
+  
+
 app.post("/edit-username", async (req, res) => {
     const username = req.body.username;
     const userId = req.user.id;
@@ -309,7 +325,7 @@ app.post("/comment", async(req, res) => {
 //passport local strategy 
 
 //NOTE : for error messages to show in the 'info' part of the cb it must be an object with 'message: error'. It must be called message.
-passport.use( new Strategy(
+passport.use("local", new Strategy(
     { usernameField: 'email'}, // specify the field name here. Telling passport that my username field is called email
     async function verify(email, password, cb){
     console.log("IN lOCAL Strategy");
@@ -346,6 +362,69 @@ passport.use( new Strategy(
         cb(err, false, {message: "Error with databse query"});
     }
 }));
+
+
+// Google Passport Strategy
+passport.use(
+    "google",
+    new GoogleStrategy(
+      {
+        clientID: process.env.GOOGLE_CLIENT_ID,
+        clientSecret: process.env.GOOGLE_CLIENT_SECRET,
+        callbackURL: "http://localhost:3000/auth/google/",
+        userProfileURL: "https://www.googleapis.com/oauth2/v3/userinfo",
+        scope: ['profile', 'email'] // Add the scope parameter here
+      },
+      async (accessToken, refreshToken, profile, cb) => {
+        try {
+          console.log(profile);
+          const result = await db.query("SELECT * FROM users WHERE email = $1", [
+            profile.email,
+          ]);
+          if (result.rows.length === 0) {
+            const newUser = await db.query(
+              "INSERT INTO users (email, username, password) VALUES ($1, $2, $3)",
+              [profile.email,profile.email, "google"]
+            );
+            return cb(null, newUser.rows[0]);
+          } else {
+            return cb(null, result.rows[0]);
+          }
+        } catch (err) {
+          return cb(err);
+        }
+      }
+    )
+  );
+
+  passport.use("google-login", new GoogleStrategy({
+    clientID: process.env.GOOGLE_CLIENT_ID,
+    clientSecret: process.env.GOOGLE_CLIENT_SECRET,
+    callbackURL: 'http://localhost:3000/auth/google/login',
+    scope: ['profile', 'email'] // Add the scope parameter here
+  }, async (accessToken, refreshToken, profile, cb) => {
+    // Extract user information
+    const email = profile.email;
+  
+    try {
+      // Check if user exists in the database
+      const userQuery = await pool.query('SELECT * FROM users WHERE email = $1', [email]);
+      if (userQuery.rows.length > 0) {
+        // User exists, return user
+        return cb(null, userQuery.rows[0]);
+      } else {
+        // Create a new user
+        const newUser = await pool.query(
+          'INSERT INTO users (username, email, password) VALUES ($1, $2) RETURNING *',
+          [ email, email, "google"]
+        );
+        return cb(null, newUser.rows[0]);
+      }
+    } catch (error) {
+      return cb(error);
+    }
+  }));
+  
 
 passport.serializeUser((user, cb) => {
     cb(null, user);

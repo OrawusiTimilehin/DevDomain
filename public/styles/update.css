@@ -1,0 +1,82 @@
+
+.update-heading{
+    font-size: 2rem;
+    font-family: 'Oxanium', sans-serif;
+    font-weight: 250;
+}
+.form-container{
+    border: solid 3px #63758B60;
+    border-radius: 3rem;
+    height: 20rem;
+    width:20rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+
+}
+
+.post-box{
+   
+    transition: 0.15s ease-in-out;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    /* width:2.5rem; */
+}
+
+.buttons{
+    font-family: "Oxanium", sans-serif;
+    width: 6rem;
+    height: 2.8rem;
+    background-color: #ffffff;
+    border: solid 0.1rem #000c41;
+    border-radius: 10rem;
+
+    /* test */
+    /* border: solid 0.1rem #ffffff;
+    background-color: transparent;
+    color: white; */
+
+
+    transition: 0.15s ease-in-out;
+    
+}
+
+.buttons:hover{
+    border: solid 0.1rem #ffffff;
+    background-color: transparent;
+    color: white;
+
+    /* test */
+    /* border: solid 0.1rem #000c41;
+    background-color: #ffffff;
+    color: #000c41; */
+    transform: scale(1.08);
+}
+
+
+.form-container:hover{
+    box-shadow: 0 0 0.6rem 0.05rem #ffffff80;
+
+}
+
+.input-box{
+    background-color: transparent;
+    border-radius: 1rem;
+    border: solid 2px #63758B60;
+    color: white;
+    font-size: 1.2rem;
+    font-family: "Oxananium", sans-serif;
+    height: 3rem;
+    width: 60%;
+
+}
+.update-container{
+    display: flex;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+}
